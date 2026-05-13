@@ -1,21 +1,27 @@
 package duongnguyen.vongquanhphuyen.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.LinearLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import java.util.ArrayList;
-
 import duongnguyen.vongquanhphuyen.R;
-import duongnguyen.vongquanhphuyen.adapters.DestinationAdapter;
-import duongnguyen.vongquanhphuyen.models.Destinations;
 
 public class MainActivity extends AppCompatActivity {
-    private DestinationAdapter adapter; // Tên Adapter bạn vừa tạo
-    private ArrayList<Destinations> destinationList;
+    private LinearLayout linearLayout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        linearLayout = findViewById(R.id.lnLayoutDes);
+        linearLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent screeDes = new Intent(MainActivity.this, DestinationActivity.class);
+                startActivity(screeDes);
+            }
+        });
     }
 }

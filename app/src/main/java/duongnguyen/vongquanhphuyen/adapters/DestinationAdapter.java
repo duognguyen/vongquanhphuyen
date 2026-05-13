@@ -1,5 +1,6 @@
 package duongnguyen.vongquanhphuyen.adapters;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +14,7 @@ import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
 
+import duongnguyen.vongquanhphuyen.activities.DetailDestinationActivity;
 import duongnguyen.vongquanhphuyen.models.Destinations;
 import duongnguyen.vongquanhphuyen.R;
 
@@ -36,9 +38,20 @@ public class DestinationAdapter extends RecyclerView.Adapter<DestinationAdapter.
         holder.tenDiaDiem.setText(destinations.getName());
         Glide.with(holder.itemView.getContext())
                 .load(destinations.getImageUrl())
-                .placeholder(R.drawable.ic_launcher_background) // Ảnh hiển thị khi đang load
-                .error(R.drawable.ic_launcher_foreground)      // Ảnh hiển thị nếu link lỗi
+                .placeholder(R.drawable.ic_launcher_background)
+                .error(R.drawable.ic_launcher_foreground)
                 .into(holder.anhHeader);
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext(), DetailDestinationActivity.class);
+                intent.putExtra("name", destinations.getName());
+                intent.putExtra("description", destinations.getDescription());
+                intent.putExtra("image", destinations.getImageUrl());
+                intent.putExtra("location", destinations.getLocation());
+                v.getContext().startActivity(intent);
+            }
+        });
     }
 
     @Override
@@ -54,5 +67,6 @@ public class DestinationAdapter extends RecyclerView.Adapter<DestinationAdapter.
             anhHeader = itemView.findViewById(R.id.imgAnhHeader);
             tenDiaDiem = itemView.findViewById(R.id.tvTenDiaDiem);
         }
+
     }
 }

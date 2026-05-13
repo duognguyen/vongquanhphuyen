@@ -12,6 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.VongQuanhPhuYen">
         <activity
+            android:name=".activities.DetailDestinationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.DestinationActivity"
+            android:exported="false" />
+        <activity
             android:name=".activities.MainActivity"
             android:exported="true">
             <intent-filter>
