@@ -12,6 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.VongQuanhPhuYen">
         <activity
+            android:name=".activities.DetailFoodActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.FoodsActivity"
+            android:exported="false" />
+        <activity
             android:name=".activities.DetailDestinationActivity"
             android:exported="false" />
         <activity

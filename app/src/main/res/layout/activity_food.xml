@@ -27,7 +27,7 @@
                 android:layout_marginStart="48dp"
                 android:layout_marginTop="23dp"
                 android:layout_marginBottom="22dp"
-                android:text="Điểm đến"
+                android:text="Ẩm thực"
                 android:textColor="#039BE5"
                 android:textSize="20sp"
                 app:layout_constraintBottom_toBottomOf="parent"

@@ -6,9 +6,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 import com.bumptech.glide.Glide;
 
@@ -20,12 +17,12 @@ public class DetailDestinationActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_destination);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
-        ImageView btnBack = findViewById(R.id.btnBackDetail);
+//        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+//            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+//            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+//            return insets;
+//        });
+        ImageView btnBack = findViewById(R.id.btnBackFoodDetail);
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -33,8 +30,8 @@ public class DetailDestinationActivity extends AppCompatActivity {
             }
         });
 
-        TextView tvDetailNmae = findViewById(R.id.tvDetailName);
-        ImageView imgDetail = findViewById(R.id.imgContentDetail);
+        TextView tvDetailNmae = findViewById(R.id.tvDetailFoodName);
+        ImageView imgDetail = findViewById(R.id.imgContentFoodDetail);
 
         String name = getIntent().getStringExtra("name");
         String imageUrl = getIntent().getStringExtra("image");
