@@ -26,7 +26,7 @@
             tools:layout_editor_absoluteX="16dp">
 
             <ImageView
-                android:id="@+id/btnBackFoodDetail"
+                android:id="@+id/btnBackDesDetail"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:background="@drawable/bg_circles_explore"

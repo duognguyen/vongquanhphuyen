@@ -5,12 +5,18 @@ public class Destinations {
     private String description;
     private String location;
     private  String imageUrl;
+    private double latitude;
+    private double longitude;
+    private String map;
 
-    public Destinations(String name, String description, String location, String imageUrl) {
+    public Destinations(String name, String description, String location, String imageUrl, double latitude, double longitude, String map) {
         this.name = name;
         this.description = description;
         this.location = location;
         this.imageUrl = imageUrl;
+        this.latitude = latitude;
+        this.longitude = longitude;
+        this.map = map;
     }
 
     public Destinations() {
@@ -46,5 +52,29 @@ public class Destinations {
 
     public void setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
+    }
+
+    public double getLatitude() {
+        return latitude;
+    }
+
+    public double getLongitude() {
+        return longitude;
+    }
+
+    public void setLatitude(double latitude) {
+        this.latitude = latitude;
+    }
+
+    public void setLongitude(double longitude) {
+        this.longitude = longitude;
+    }
+
+    public String getMap() {
+        return map;
+    }
+
+    public void setMap(String map) {
+        this.map = map;
     }
 }

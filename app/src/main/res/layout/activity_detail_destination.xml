@@ -6,7 +6,7 @@
     android:layout_height="match_parent">
 
     <ImageView
-        android:id="@+id/imgContentFoodDetail"
+        android:id="@+id/imgContentDesDetail"
         android:layout_width="match_parent"
         android:layout_height="300dp"
         android:scaleType="centerCrop"
@@ -14,7 +14,7 @@
         app:srcCompat="@drawable/ic_launcher_background" />
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbarFoodDetail"
+        android:id="@+id/toolbarDesDetail"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:layout_marginTop="16dp"
@@ -26,7 +26,7 @@
             tools:layout_editor_absoluteX="16dp">
 
             <ImageView
-                android:id="@+id/btnBackFoodDetail"
+                android:id="@+id/btnBackDesDetail"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:background="@drawable/bg_circles_explore"
@@ -46,7 +46,7 @@
         android:layout_marginTop="-30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/imgContentFoodDetail">
+        app:layout_constraintTop_toBottomOf="@id/imgContentDesDetail">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -56,12 +56,37 @@
             android:padding="20dp">
 
             <TextView
-                android:id="@+id/tvDetailFoodName"
+                android:id="@+id/tvDetailDesName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Tên Địa Điểm"
                 android:textSize="24sp"
                 android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textDesLocation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="Vị trí"
+                android:textSize="20sp" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="375dp"
+                android:layout_height="205dp"
+                android:layout_marginTop="5dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="0dp">
+
+                <ImageView
+                    android:id="@+id/imgMap"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    app:srcCompat="@drawable/anhphuyen" />
+
+            </androidx.cardview.widget.CardView>
+
 
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>

@@ -20,11 +20,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 import duongnguyen.vongquanhphuyen.R;
-import duongnguyen.vongquanhphuyen.adapters.FoodAdapter;
+import duongnguyen.vongquanhphuyen.adapters.DestinationAdapter;
 import duongnguyen.vongquanhphuyen.models.Destinations;
 
 public class DestinationActivity extends AppCompatActivity {
-    private FoodAdapter adapter; // Tên Adapter bạn vừa tạo
+    private DestinationAdapter adapter; // Tên Adapter bạn vừa tạo
     private ArrayList<Destinations> destinationList;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,12 +34,12 @@ public class DestinationActivity extends AppCompatActivity {
         destinationList =  new ArrayList<>();
         FirebaseFirestore db = FirebaseFirestore.getInstance();
 
-        RecyclerView recyclerView = findViewById(R.id.rcvListFood);
+        RecyclerView recyclerView = findViewById(R.id.rcvListDes);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        adapter = new FoodAdapter(destinationList);
+        adapter = new DestinationAdapter(destinationList);
         recyclerView.setAdapter(adapter);
 
-        ImageView btnBack = findViewById(R.id.btnBackFood);
+        ImageView btnBack = findViewById(R.id.btnBack);
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

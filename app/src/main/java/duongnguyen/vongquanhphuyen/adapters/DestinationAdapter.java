@@ -49,6 +49,9 @@ public class DestinationAdapter extends RecyclerView.Adapter<DestinationAdapter.
                 intent.putExtra("description", destinations.getDescription());
                 intent.putExtra("image", destinations.getImageUrl());
                 intent.putExtra("location", destinations.getLocation());
+                intent.putExtra("latitude", destinations.getLatitude());
+                intent.putExtra("longitude", destinations.getLongitude());
+                intent.putExtra("map", destinations.getMap());
                 v.getContext().startActivity(intent);
             }
         });
