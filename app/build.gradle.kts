@@ -49,5 +49,5 @@ dependencies {
     androidTestImplementation(libs.espresso.core)
     implementation(libs.glide)
     annotationProcessor(libs.glide.compiler)
-
+    implementation("com.android.volley:volley:1.2.1")
 }

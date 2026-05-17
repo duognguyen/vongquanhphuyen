@@ -10,18 +10,27 @@ import androidx.appcompat.app.AppCompatActivity;
 import duongnguyen.vongquanhphuyen.R;
 
 public class MainActivity extends AppCompatActivity {
-    private LinearLayout linearLayout;
+    private LinearLayout lnDes;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        linearLayout = findViewById(R.id.lnLayoutDes);
-        linearLayout.setOnClickListener(new View.OnClickListener() {
+        lnDes = findViewById(R.id.lnLayoutDes);
+        lnDes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent screeDes = new Intent(MainActivity.this, DestinationActivity.class);
                 startActivity(screeDes);
             }
         });
+        LinearLayout lnNote = findViewById(R.id.lnLayoutNote);
+        lnNote.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent screeNote = new Intent(MainActivity.this, NoteActivity.class);
+                startActivity(screeNote);
+            }
+        });
+
     }
 }
