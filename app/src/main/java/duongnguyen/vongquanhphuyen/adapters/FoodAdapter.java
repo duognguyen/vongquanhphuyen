@@ -16,7 +16,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 import duongnguyen.vongquanhphuyen.R;
-import duongnguyen.vongquanhphuyen.activities.DetailDestinationActivity;
+import duongnguyen.vongquanhphuyen.fragments.DestinationFragment;
 import duongnguyen.vongquanhphuyen.models.Foods;
 
 public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.FoodViewHolder> {
@@ -45,7 +45,7 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.FoodViewHolder
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(), DetailDestinationActivity.class);
+                Intent intent = new Intent(v.getContext(), DestinationFragment.class);
                 intent.putExtra("name", foods.getNameFood());
                 intent.putExtra("description", foods.getDescriptionFood());
                 intent.putExtra("image", foods.getImageFood());

@@ -95,7 +95,7 @@
             </LinearLayout>
 
             <androidx.cardview.widget.CardView
-                app:cardElevation="12dp"
+                app:cardElevation="5dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -124,7 +124,7 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                app:cardElevation="12dp"
+                app:cardElevation="5dp"
                 android:padding="2dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -162,7 +162,7 @@
                     android:textStyle="bold"
                     android:textSize="23sp"></TextView>
                 <androidx.cardview.widget.CardView
-                    app:cardElevation="12dp"
+                    app:cardElevation="5dp"
                     android:layout_width="375dp"
                     android:layout_height="205dp"
                     android:layout_marginTop="5dp"

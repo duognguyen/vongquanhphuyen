@@ -14,9 +14,9 @@ import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
 
+import duongnguyen.vongquanhphuyen.R;
 import duongnguyen.vongquanhphuyen.activities.DetailDestinationActivity;
 import duongnguyen.vongquanhphuyen.models.Destinations;
-import duongnguyen.vongquanhphuyen.R;
 
 public class DestinationAdapter extends RecyclerView.Adapter<DestinationAdapter.DestinationViewHolder> {
     ArrayList<Destinations> listDes;

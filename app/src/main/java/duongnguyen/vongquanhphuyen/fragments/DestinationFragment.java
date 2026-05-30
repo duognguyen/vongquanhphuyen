@@ -1,12 +1,14 @@
-package duongnguyen.vongquanhphuyen.activities;
+package duongnguyen.vongquanhphuyen.fragments; // Hoặc .fragments tùy bạn đặt tệp
 
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.ImageView;
+import android.view.ViewGroup;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -23,53 +25,57 @@ import duongnguyen.vongquanhphuyen.R;
 import duongnguyen.vongquanhphuyen.adapters.DestinationAdapter;
 import duongnguyen.vongquanhphuyen.models.Destinations;
 
-public class DestinationActivity extends AppCompatActivity {
-    private DestinationAdapter adapter; // Tên Adapter bạn vừa tạo
-    private ArrayList<Destinations> destinationList;
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_destination);
+public class DestinationFragment extends Fragment {
 
-        destinationList =  new ArrayList<>();
+    private DestinationAdapter adapter;
+    private ArrayList<Destinations> destinationList;
+
+    @Nullable
+    @Override
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.activity_destination, container, false);
+
+        destinationList = new ArrayList<>();
         FirebaseFirestore db = FirebaseFirestore.getInstance();
 
-        RecyclerView recyclerView = findViewById(R.id.rcvListDes);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        RecyclerView recyclerView = view.findViewById(R.id.rcvListDes);
+
+        // 3. Thay chữ "this" bằng "requireContext()"
+        recyclerView.setLayoutManager(new LinearLayoutManager(requireContext()));
         adapter = new DestinationAdapter(destinationList);
         recyclerView.setAdapter(adapter);
 
-        ImageView btnBack = findViewById(R.id.btnBack);
-        btnBack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
 
+        // Tải dữ liệu từ Firebase gán vào Fragment
         db.collection("Destinations")
                 .get()
                 .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
                     @Override
                     public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
+                        // Kiểm tra xem Fragment còn hiển thị không trước khi cập nhật UI
+                        if (!isAdded() || getActivity() == null) return;
+
                         if (!queryDocumentSnapshots.isEmpty()) {
                             List<DocumentSnapshot> list = queryDocumentSnapshots.getDocuments();
+                            destinationList.clear();
                             for (DocumentSnapshot d : list) {
                                 Destinations obj = d.toObject(Destinations.class);
                                 destinationList.add(obj);
                             }
                             adapter.notifyDataSetChanged();
                         } else {
-                            Toast.makeText(DestinationActivity.this, "Không có dữ liệu", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(requireContext(), "Không có dữ liệu", Toast.LENGTH_SHORT).show();
                         }
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
-                        Toast.makeText(DestinationActivity.this, "Lỗi: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                        if (!isAdded() || getActivity() == null) return;
+                        Toast.makeText(requireContext(), "Lỗi: " + e.getMessage(), Toast.LENGTH_SHORT).show();
                     }
                 });
-    }
 
+        return view;
+    }
 }
