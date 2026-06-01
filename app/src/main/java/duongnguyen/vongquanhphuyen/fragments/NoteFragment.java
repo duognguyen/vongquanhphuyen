@@ -40,7 +40,7 @@ public class NoteFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.activity_note, container, false);
+        View view = inflater.inflate(R.layout.fragment_note, container, false);
 
         db = FirebaseFirestore.getInstance();
 
@@ -87,15 +87,12 @@ public class NoteFragment extends Fragment {
 
         String url = "https://api.openweathermap.org/data/2.5/weather?lat=" + latitude + "&lon=" + longitude + "&appid=" + apiKey + "&units=metric&lang=vi";
 
-        // Đã sửa đổi thành requireContext() thay vì "this" để tránh lỗi ngữ cảnh trên Fragment
         RequestQueue queue = Volley.newRequestQueue(requireContext());
 
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
-                // Kiểm tra an toàn: Nếu Fragment đã bị đóng trước khi API trả về thì dừng lại
                 if (!isAdded()) return;
-
                 try {
                     JSONObject mainObject = response.getJSONObject("main");
                     double temp = mainObject.getDouble("temp");

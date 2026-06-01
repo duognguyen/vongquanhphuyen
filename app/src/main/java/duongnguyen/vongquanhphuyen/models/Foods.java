@@ -4,13 +4,11 @@ public class Foods {
     private String nameFood;
     private String descriptionFood;
     private String imageFood;
-    private String[] restaurantIds;
 
-    public Foods(String nameFood, String descriptionFood, String imageFood, String[] restaurantIds) {
+    public Foods(String nameFood, String descriptionFood, String imageFood) {
         this.nameFood = nameFood;
         this.descriptionFood = descriptionFood;
         this.imageFood = imageFood;
-        this.restaurantIds = restaurantIds;
     }
 
     public Foods() {
@@ -40,11 +38,4 @@ public class Foods {
         this.imageFood = imageFood;
     }
 
-    public String[] getRestaurantIds() {
-        return restaurantIds;
-    }
-
-    public void setRestaurantIds(String[] restaurantIds) {
-        this.restaurantIds = restaurantIds;
-    }
 }

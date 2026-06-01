@@ -14,11 +14,17 @@ import com.bumptech.glide.Glide;
 import duongnguyen.vongquanhphuyen.R;
 
 public class DetailDestinationActivity extends AppCompatActivity {
+    TextView tvDetailName, tvDetailLocation, tvDescription;
+    ImageView imgDetail, imgMap, btnBack;
+    double latiude, longitude;
+    String name;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_destination);
-        ImageView btnBack = findViewById(R.id.btnBackDesDetail);
+
+        btnBack = findViewById(R.id.btnBackDesDetail);
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -26,29 +32,38 @@ public class DetailDestinationActivity extends AppCompatActivity {
             }
         });
 
-        TextView tvDetailNmae = findViewById(R.id.tvDetailDesName);
-        ImageView imgDetail = findViewById(R.id.imgContentDesDetail);
-        TextView tvDetailLocation = findViewById(R.id.textDesLocation);
-        ImageView imgMap = findViewById(R.id.imgMap);
-        String name = getIntent().getStringExtra("name");
+        tvDetailName = findViewById(R.id.tvDetailDesName);
+        imgDetail = findViewById(R.id.imgContentDesDetail);
+        tvDetailLocation = findViewById(R.id.textDesLocation);
+        tvDescription = findViewById(R.id.tvDescription);
+        imgMap = findViewById(R.id.imgMap);
+
+        name = getIntent().getStringExtra("name");
         String imageUrl = getIntent().getStringExtra("image");
         String location = getIntent().getStringExtra("location");
         String map = getIntent().getStringExtra("map");
+        String descrip = getIntent().getStringExtra("description");
+        latiude = getIntent().getDoubleExtra("latitude", 13.08);
+        longitude = getIntent().getDoubleExtra("longitude", 109.30);
 
-        tvDetailNmae.setText(name);
+        tvDetailName.setText(name);
         tvDetailLocation.setText(location);
+        tvDescription.setText(descrip);
+
         Glide.with(this)
                 .load(imageUrl)
                 .placeholder(android.R.drawable.ic_menu_gallery)
                 .into(imgDetail);
+
+        int resId = getResources().getIdentifier(map, "drawable", getPackageName());
         Glide.with(this)
-                .load(map)
+                .load(resId)
                 .placeholder(R.drawable.ic_launcher_background)
+                .error(R.drawable.ic_launcher_foreground)
                 .into(imgMap);
-
-        double latiude = getIntent().getDoubleExtra("latitude", 13.08);
-        double longitude = getIntent().getDoubleExtra("longitude", 109.30);
-
+        googleMap();
+    }
+    public  void googleMap(){
         imgMap.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -60,7 +75,6 @@ public class DetailDestinationActivity extends AppCompatActivity {
                 if (mapIntent.resolveActivity(getPackageManager()) != null) {
                     startActivity(mapIntent);
                 } else {
-                    // Nếu điện thoại không có sẵn app Google Maps, mở bằng trình duyệt Web
                     String webUri = "https://www.google.com/maps/search/?api=1&query=" + latiude + "," + longitude;
                     Intent webIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(webUri));
                     startActivity(webIntent);

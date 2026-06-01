@@ -16,4 +16,8 @@
         android:id="@+id/nav_note"
         android:icon="@drawable/light"
         android:title="Lưu ý" />
+    <item
+        android:id="@+id/nav_login"
+        android:icon="@drawable/light"
+        android:title="Đăng nhập" />
 </menu>

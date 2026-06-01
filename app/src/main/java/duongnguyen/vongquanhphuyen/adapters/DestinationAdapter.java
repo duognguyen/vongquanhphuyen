@@ -28,7 +28,7 @@ public class DestinationAdapter extends RecyclerView.Adapter<DestinationAdapter.
     @NonNull
     @Override
     public DestinationViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_des, parent, false);
         return new DestinationViewHolder(view);
     }
 
@@ -36,6 +36,7 @@ public class DestinationAdapter extends RecyclerView.Adapter<DestinationAdapter.
     public void onBindViewHolder(@NonNull DestinationViewHolder holder, int position) {
         Destinations destinations = listDes.get(position);
         holder.tenDiaDiem.setText(destinations.getName());
+        holder.viTri.setText(destinations.getLocation());
         Glide.with(holder.itemView.getContext())
                 .load(destinations.getImageUrl())
                 .placeholder(R.drawable.ic_launcher_background)
@@ -65,10 +66,12 @@ public class DestinationAdapter extends RecyclerView.Adapter<DestinationAdapter.
     class DestinationViewHolder extends RecyclerView.ViewHolder{
         ImageView anhHeader;
         TextView tenDiaDiem;
+        TextView viTri;
         public DestinationViewHolder(@NonNull View itemView) {
             super(itemView);
-            anhHeader = itemView.findViewById(R.id.imgAnhHeader);
-            tenDiaDiem = itemView.findViewById(R.id.tvTenDiaDiem);
+            anhHeader = itemView.findViewById(R.id.imgAnhMonAn);
+            tenDiaDiem = itemView.findViewById(R.id.tvTenMonAn);
+            viTri = itemView.findViewById(R.id.tvMoTa);
         }
 
     }

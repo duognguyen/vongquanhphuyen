@@ -20,7 +20,6 @@ public class HomeFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        // Kết nối với file xml vừa tạo ở Bước 1
         View view = inflater.inflate(R.layout.fragment_home, container, false);
 
         // Bê toàn bộ logic click từ MainActivity cũ sang đây, lưu ý phải có "view." ở trước findViewById
@@ -30,7 +29,6 @@ public class HomeFragment extends Fragment {
         lnDes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Fragment chuyển màn hình thì dùng getActivity() thay cho MainActivity.this
                 Intent screeDes = new Intent(getActivity(), DestinationFragment.class);
                 startActivity(screeDes);
             }

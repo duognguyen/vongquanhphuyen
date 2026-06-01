@@ -6,13 +6,14 @@
     android:layout_height="wrap_content">
 
     <androidx.cardview.widget.CardView
+        android:layout_margin="8dp"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="3dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="5dp"
-        app:cardCornerRadius="30dp"
+        app:cardCornerRadius="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -24,20 +25,39 @@
             android:orientation="vertical">
 
             <ImageView
-                android:id="@+id/imgAnhHeader"
+                android:id="@+id/imgAnhMonAn"
                 android:layout_width="match_parent"
-                android:layout_height="180dp"
+                android:layout_height="145dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/ic_launcher_background" />
 
             <TextView
-                android:id="@+id/tvTenDiaDiem"
+                android:id="@+id/tvTenMonAn"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="10dp"
-                android:gravity="center"
                 android:text="TextView"
-                android:textAlignment="center" />
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:textAlignment="textStart"
+                android:paddingLeft="20dp"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="20dp">
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/location"></ImageView>
+
+                <TextView
+                    android:id="@+id/tvMoTa"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="10dp"
+                    android:text="Địa điểm"></TextView>
+            </LinearLayout>
+
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 

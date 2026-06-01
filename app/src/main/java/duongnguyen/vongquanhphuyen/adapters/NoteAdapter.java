@@ -1,5 +1,6 @@
 package duongnguyen.vongquanhphuyen.adapters;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -35,8 +36,12 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.NoteViewHolder
         NoteItem noteItem = listNote.get(position);
         holder.tvTitle.setText(noteItem.getTitle());
         holder.tvContent.setText(noteItem.getContent());
-        Glide.with(holder.itemView.getContext())
-                .load(noteItem.getIcon())
+
+        Context context = holder.itemView.getContext();
+        String imageName = noteItem.getIcon();
+        int resId = context.getResources().getIdentifier(imageName, "drawable", context.getPackageName());
+        Glide.with(context)
+                .load(resId)
                 .placeholder(R.drawable.ic_launcher_background)
                 .error(R.drawable.ic_launcher_foreground)
                 .into(holder.imgAnhIcon);

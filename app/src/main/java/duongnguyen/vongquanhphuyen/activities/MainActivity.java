@@ -13,6 +13,7 @@ import duongnguyen.vongquanhphuyen.fragments.DestinationFragment;
 import duongnguyen.vongquanhphuyen.fragments.FoodFragment;
 import duongnguyen.vongquanhphuyen.fragments.HomeFragment;
 import duongnguyen.vongquanhphuyen.fragments.NoteFragment;
+import duongnguyen.vongquanhphuyen.fragments.UserFragment;
 
 public class MainActivity extends AppCompatActivity {
     private LinearLayout lnDes;
@@ -38,6 +39,8 @@ public class MainActivity extends AppCompatActivity {
                 selectedFragment = new FoodFragment();
             } else if (itemId == R.id.nav_note) {
                 selectedFragment = new NoteFragment();
+            } else if(itemId == R.id.nav_login){
+                selectedFragment = new UserFragment();
             }
 
             if (selectedFragment != null) {
