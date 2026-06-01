@@ -16,21 +16,14 @@
         <activity
             android:name=".activities.RegisterActivity"
             android:exported="false" />
-        <activity
-            android:name=".activities.NoteActivity"
-            android:exported="false" />
-        <activity
-            android:name=".activities.DetailFoodActivity"
-            android:exported="false" />
-        <activity
-            android:name=".activities.FoodsActivity"
-            android:exported="false" />
+
         <activity
             android:name=".activities.DetailDestinationActivity"
             android:exported="false" />
         <activity
-            android:name=".activities.DestinationActivity"
+            android:name=".activities.LoginActivity"
             android:exported="false" />
+
         <activity
             android:name=".activities.MainActivity"
             android:exported="true">
