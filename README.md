@@ -1,6 +1,6 @@
 #Kết quả dự án
 Màn hình trang chủ
-<img width="1080" height="2400" alt="image" src="https://github.com/user-attachments/assets/64378a29-5b65-42c8-81ea-69838c3f3869" />
+<img width="300"  alt="image" src="https://github.com/user-attachments/assets/64378a29-5b65-42c8-81ea-69838c3f3869" />
 
 Màn hình tragn địa điểm
 <img width="1080" height="2400" alt="image" src="https://github.com/user-attachments/assets/2da810ca-a8e2-42e3-bb5d-ec651aa149dc" />
