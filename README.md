@@ -11,6 +11,8 @@
 - Google Maps API
 - RecyclerView
 - Material Design
+- Glide: Thư viện tải và hiển thị ảnh từ URL 
+- Icon được lấy từ website: https://www.flaticon.com/
 
 ## 📱 Kết quả dự án
 
