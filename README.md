@@ -54,7 +54,7 @@ Hiển thị thông tin chi tiết khi người dùng chọn một địa điể
 
 ### 📌 Tích hợp Google Maps
 
-Khi nhấn vào biểu tượng vị trí, ứng dụng sẽ mở Google Maps.
+Khi nhấn vào hình ảnh vị trí, ứng dụng sẽ mở Google Maps.
 
 <p align="center">
     <img src="https://github.com/user-attachments/assets/1744ee25-bd18-44df-854c-fbfdde22b1c5" width="300">
