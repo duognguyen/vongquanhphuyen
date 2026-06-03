@@ -154,11 +154,9 @@ public class DetailDestinationActivity extends AppCompatActivity {
         super.onResume();
         FirebaseUser currentUser = mAuth.getCurrentUser();
         if (currentUser != null) {
-            // Đã đăng nhập -> Hiện ô nhập liệu, ẩn nút yêu cầu
             layoutInputComment.setVisibility(View.VISIBLE);
             btnLoginToComment.setVisibility(View.GONE);
         } else {
-            // Chưa đăng nhập -> Ẩn ô nhập liệu, hiện nút yêu cầu đăng nhập
             layoutInputComment.setVisibility(View.GONE);
             btnLoginToComment.setVisibility(View.VISIBLE);
         }

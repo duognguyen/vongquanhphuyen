@@ -66,6 +66,8 @@ android:background="#F4F1EA">
             android:layout_height="wrap_content"
             android:id="@+id/btnLogout"
             android:text="Đăng xuất"
+            android:backgroundTint="#0097A7"
+            android:textColor="#FFFFFF"
             >
 
         </Button>

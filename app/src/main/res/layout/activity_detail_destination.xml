@@ -101,26 +101,6 @@
                 android:layout_marginTop="10dp"
                 app:cardCornerRadius="20dp">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="5dp"
-                        android:text="Lưu ý"
-                        android:textSize="23sp"
-                        android:textStyle="bold"></TextView>
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Sản ciên b khoản dành riêng cho dịch vụ của Nền tảng Google Maps. Để biết thêm thông tin, hãy xem nội dung mô tả về giai đoạn ra mắt.">
-                    </TextView>
-
-
-                </LinearLayout>
             </androidx.cardview.widget.CardView>
 
 <!--            -->
