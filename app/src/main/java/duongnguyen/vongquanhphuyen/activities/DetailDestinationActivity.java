@@ -166,7 +166,7 @@ public class DetailDestinationActivity extends AppCompatActivity {
         if (name == null) return;
 
         db.collection("Comments")
-                .whereEqualTo("destination", name)
+                .whereEqualTo("destinationId", name)
                 .addSnapshotListener((value, error) -> {
                     if (error != null) {
                         Log.e("FirestoreError", "Lỗi tải bình luận: " + error.getMessage());
