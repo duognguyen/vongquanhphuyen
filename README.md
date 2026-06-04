@@ -2,6 +2,11 @@
 
 Ứng dụng hỗ trợ khám phá các địa điểm du lịch, món ăn đặc sản và thông tin hữu ích tại Phú Yên.
 
+## Video Demo
+
+🎥 Xem video demo tại đây:
+https://drive.google.com/file/d/14MGCx5SpiUIdue_kJDANC1fGuErayfOa/view?usp=sharing
+
 ## 🛠 Công nghệ sử dụng
 
 - Java
